@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrian Flatbox Design</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div class="squares"></div>
+    <div class="square-1"></div>
+    <div class="square-2"></div>
+    <div class="square-3"></div>
+    <div class="square-4"></div>
+  <div class="circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+  </div>
+
+  <section id="assignment">
+
+    <div class="chatbox">
+
+        <div class="media-icons">
+            <div class="arrow-icon"><img src="img/arrow_arrow left_left_icon.svg" alt=""></div>
+            <div class="friendname"><img src="img/friend_gerald.jpg" alt=""></div>
+            <div class="icons"><img src="img/circle-info-solid.svg" alt=""></div>
+            <div class="icons"><img src="img/video-solid.svg" alt=""></div>
+            <div class="icons"><img src="img/phone-solid.svg" alt=""></div>
+        </div>
+
+        <div class="chatlogs">
+         
+            <div class="chat friend">
+                <div class="user-photo"><img src="img\friend_gerald.jpg" alt=""></div>
+                <p class="chat-message">What's up, Brother..!!</p>
+            </div>
+            <div class="chat self">
+                <div class="user-photo"><img src="img\crop_image.jpg" alt=""></div>
+                <p class="chat-message">What's up bro..!! How are you?
+                </p>
+            </div>
+
+            
+            <div class="chat friend">
+                <div class="user-photo"><img src="img\friend_gerald.jpg" alt=""></div>
+                <p class="chat-message">What's up, Brother..!!</p>
+            </div>
+            <div class="chat self">
+                <div class="user-photo"><img src="img\crop_image.jpg" alt=""></div>
+                <p class="chat-message">What's up bro..!! How are you?
+                </p>
+            </div>
+
+            
+         
+            <div class="chat friend">
+                <div class="user-photo"><img src="img\friend_gerald.jpg" alt=""></div>
+                <p class="chat-message">What's up, Brother..!!</p>
+            </div>
+            <div class="chat self">
+                <div class="user-photo"><img src="img\crop_image.jpg" alt=""></div>
+                <p class="chat-message">What's up bro..!! How are you?
+                </p>
+            </div>
+
+            
+         
+            <div class="chat friend">
+                <div class="user-photo"><img src="img\friend_gerald.jpg" alt=""></div>
+                <p class="chat-message">What's up, Brother..!!</p>
+            </div>
+            <!-- <div class="chat self">
+                <div class="user-photo"><img src="img\crop_image.jpg" alt=""></div>
+                <p class="chat-message" id="outputmsg"></p>
+            </div> -->
+            <div class="chat self">
+                <div class="user-photo"  v-if="isShow" ><img src="img\crop_image.jpg" alt=""></div>
+                <p class="chat-message" v-if="isShow" v-for="(task, index) in tasks" @click="removeTasks(index)">
+                    {{ task }} 
+                </p>
+            </div>
+
+        </div>
+
+         
+        <div class="chat-form">
+            <!-- <textarea placeholder="Write a messages here..." id="userinput"  v-model="enteredTasks"></textarea> -->
+            <textarea placeholder="Write a messages here..."  v-model="enteredTasks"></textarea>
+            <!-- <button id="btn" type="button"> -->
+            <button type="button" v-if="tasks.length <= 4" @click="addTask">
+                <div class="svg-wrapper-1">
+                  <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <span >Send</span>
+            </button>
+        </div>
+
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
